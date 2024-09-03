@@ -1,4 +1,9 @@
-type Token = 'X' | 'O';
+import { Board } from "./Board.js";
+import promptSync from 'prompt-sync';
+const prompt = promptSync();
+
+export type Token = 'X' | 'O';
+export type Cell = Token | ' ';
 
 export interface IPlayer {
     name: string;
@@ -13,7 +18,7 @@ export class HumanPlayer implements IPlayer {
         this.name = name;
         this.token = token;
     }
-    makeMove(board: Board): number {
+    makeMove(_board: Board): number {
         const column = parseInt(prompt(`${this.name}, enter your move (column0-6: `) || '0');
         return column;
     }

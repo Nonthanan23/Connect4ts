@@ -1,14 +1,14 @@
-import { Token } from './Player.js';
+import { Cell, Token } from './Player.js';
 
 export class Board {
-    private grid: Token[][];
+    private grid: Cell[][];
     public readonly columns: number;
     public readonly rows: number;
 
     constructor(columns: number = 7, rows: number = 6) {
         this.columns = columns;
         this.rows = rows;
-        this.grid = Array.from({ length: rows }, () => Array(columns).fill(' '));
+        this.grid = Array.from({ length: rows }, () => Array(columns).fill(' ' as Cell));
     }
 
     public placeToken(column: number, token: Token): boolean {
@@ -36,7 +36,7 @@ export class Board {
         console.log('-'.repeat(this.columns * 2 - 1));
     }
 
-    public getGrid(): Token[][] {
+    public getGrid(): Cell[][] {
         return this.grid;
     }
 }

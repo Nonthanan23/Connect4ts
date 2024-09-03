@@ -1,5 +1,5 @@
-import { Board } from './Board';
-import { Token } from './Player';
+import { Board } from './Board.js';
+import { Token } from './Player.js';
 
 export class WinChecker {
     static checkForWin(board: Board, token: Token): boolean {

@@ -1,7 +1,7 @@
-import { Board } from './Board';
-import { IPlayer } from './Player';
-import { MoveValidator } from './MoveValidator';
-import { WinChecker } from './WinChecker';
+import { Board } from './Board.js';
+import { IPlayer } from './Player.js';
+import { MoveValidator } from './MoveValidator.js';
+import { WinChecker } from './winChecker.js';
 
 export class Game {
     private board: Board;

@@ -1,5 +1,8 @@
-import { Game } from './game/Game';
-import { HumanPlayer, ComputerPlayer } from './game/Player';
+import promptSync from 'prompt-sync';
+const prompt = promptSync();
+
+import { Game } from './game/Game.js';
+import { HumanPlayer, ComputerPlayer } from './game/Player.js';
 
 function main(): void {
     const player1 = new HumanPlayer('Player 1', 'X');
