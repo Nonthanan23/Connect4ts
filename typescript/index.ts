@@ -5,7 +5,9 @@ import { Game } from './game/Game.js';
 import { HumanPlayer, ComputerPlayer } from './game/Player.js';
 
 function main(): void {
-  const player1 = new HumanPlayer('Player 1', 'X');
+  const player1Name = prompt('Enter Player 1 name: ');
+  const player1 = new HumanPlayer(player1Name, 'X');
+
   let player2: HumanPlayer | ComputerPlayer;
 
   const opponentType = prompt('Do you want to play against a computer? (y/n): ') || 'n';
