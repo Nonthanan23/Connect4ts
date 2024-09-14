@@ -31,14 +31,19 @@ export class Board {
     return this.grid;
   }
   printBoard(): void {
-    const horizontalSeparator = '┼───'.repeat(this.columns - 1) + '┼';
-    const topBottomBorder = '┌───'.repeat(this.columns - 1) + '┐';
+    const topBorder = '┌───' + '┬───'.repeat(this.columns - 1) + '┐';
+    const middleSeparator = '├───' + '┼───'.repeat(this.columns - 1) + '┤';
+    const bottomBorder = '└───' + '┴───'.repeat(this.columns - 1) + '┘';
 
-    console.log(topBottomBorder);
-    for(const row of this.grid) {
-      const rowContent = row.map(cell => ` ${cell} `).join('│');
+    console.log(topBorder);
+    for(let row = 0; row < this.rows; row++) {
+      const rowContent = this.grid[row].map(cell => ` ${cell} `).join('│');
       console.log(`│${rowContent}│`);
-      console.log(horizontalSeparator);
+
+      if (row < this.rows - 1) {
+        console.log(middleSeparator);
+      }
     }
+    console.log(bottomBorder);
   }
 }
