@@ -22,7 +22,7 @@ export class Board {
   }
 
   isFull(): boolean {
-    return this.grid[0].every(cell => cell === ' ');
+    return this.grid[0].every(cell => cell !== ' ');
   }
   isColumnValid(column: number): boolean {
     return this.grid[0][column] === ' ';

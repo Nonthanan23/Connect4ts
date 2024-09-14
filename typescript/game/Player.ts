@@ -8,7 +8,7 @@ export type Cell = Token | ' ';
 export interface IPlayer {
   name: string;
   token: Token;
-  makeMove(board: Board): void;
+  makeMove(board: Board): number;
 }
 
 export class HumanPlayer implements IPlayer {
@@ -19,8 +19,8 @@ export class HumanPlayer implements IPlayer {
     this.name = name;
     this.token = token;
   }
-  makeMove(board: Board): void {
-    const column = parseInt(promptSync(`${this.name}, enter your move (column 0-${board.columns - 1}): `), 10);
+  makeMove(board: Board): number {
+    const column = parseInt(prompt(`${this.name}, enter your move (column 0-${board.columns - 1}): `), 10);
     return column;
   }
 }
