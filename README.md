@@ -6,12 +6,14 @@ right now it allow player to write there name pick between a bot and a player (i
 Installation
 
 - first u git clone https://github.com/Nonthanan23/Connect4ts.git
--into vscode terminal 
--cd into Connect4ts 
--npm install 
--cd into typescript and npx tsc 
--and then cd .. 
--after that run node dist/index.js
+- into vscode terminal
+- cd into Connect4ts
+- npm install
+- cd into typescript and npx tsc
+- and then cd ..
+- after that run node dist/index.js
+ 
+ 
 
 and here a vid of installation
 
