@@ -1,6 +1,6 @@
 This is my Connect 4 individual project 
 
-right now it allow player to right there name pick between a bot and a player (is easy bot how it work is randomly place into box)
+right now it allow player to write there name pick between a bot and a player (is easy bot how it work is randomly place into box)
 
 
 How it work 
