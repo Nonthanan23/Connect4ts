@@ -11,6 +11,15 @@ export class Board {
     this.grid = Array.from({ length: rows }, () => Array(columns).fill(' '));
   }
 
+  removeToken(column: number): void {
+    for (let row = 0; row < this.rows; row++) {
+      if (this.grid[row][column] !== ' ') {
+        this.grid[row][column] = ' ';
+        break;
+      }
+    }
+  }
+
   placeToken(column: number, token: Token): boolean {
     for (let row = this.rows -1; row >= 0; row--) {
       if (this.grid[row][column] === ' ') {
