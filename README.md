@@ -22,7 +22,8 @@ Installation
 and here a vid of installation
 
 
-https://github.com/user-attachments/assets/276ed642-2bec-4a41-ba9a-9b7fc1df2624
+https://github.com/user-attachments/assets/a500f127-5211-4d27-ba63-d4034f281935
+
 
 there is also another version but is a copy from a teacher where i follow his code example through class
 https://github.com/Nonthanan23/Connect4lektion.git
