@@ -1,7 +1,11 @@
 This is my Connect 4 individual project 
 
-right now it allow player to write there name pick between a bot and a player (is easy bot how it work is randomly place into box)
-
+Game describe
+right now when you start the game you got to enter your name pick if u want to play versus player or bot
+- if a player 2nd player enter name and play
+- if bot u get to choose between hard and easy
+- (hard bot try to blocking u from winning)
+- (easy is placing random token in the box)
 
 Installation
 
