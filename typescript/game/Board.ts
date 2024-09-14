@@ -1,42 +1,44 @@
 import { Cell, Token } from './Player.js';
 
 export class Board {
-    private grid: Cell[][];
-    public readonly columns: number;
-    public readonly rows: number;
+  private grid: Cell[][];
+  public readonly columns: number;
+  public readonly rows: number;
 
-    constructor(columns: number = 7, rows: number = 6) {
-        this.columns = columns;
-        this.rows = rows;
-        this.grid = Array.from({ length: rows }, () => Array(columns).fill(' ' as Cell));
-    }
+  constructor(columns = 7, rows = 6) {
+    this.columns = columns;
+    this.rows = rows;
+    this.grid = Array.from({ length: rows }, () => Array(columns).fill(' '));
+  }
 
-    public placeToken(column: number, token: Token): boolean {
-        for (let row = this.rows - 1; row >= 0; row--) {
-            if (this.grid[row][column] === ' ') {
-                this.grid[row][column] = token;
-                return true;
-            }
-        }
-        return false;
+  placeToken(column: number, token: Token): boolean {
+    for (let row = this.rows -1; row >= 0; row--) {
+      if (this.grid[row][column] === ' ') {
+        this.grid[row][column] = token;
+        return true;
+      }
     }
+    return false;
+  }
 
-    public isFull(): boolean {
-        return this.grid[0].every(cell => cell !== ' ');
-    }
+  isFull(): boolean {
+    return this.grid[0].every(cell => cell === ' ');
+  }
+  isColumnValid(column: number): boolean {
+    return this.grid[0][column] === ' ';
+  }
+  getGrid(): Cell[][] {
+    return this.grid;
+  }
+  printBoard(): void {
+    const horizontalSeparator = '┼───'.repeat(this.columns - 1) + '┼';
+    const topBottomBorder = '┌───'.repeat(this.columns - 1) + '┐';
 
-    public isColumnValid(column: number): boolean {
-        return this.grid[0][column] === ' ';
+    console.log(topBottomBorder);
+    for(const row of this.grid) {
+      const rowContent = row.map(cell => ` ${cell} `).join('│');
+      console.log(`│${rowContent}│`);
+      console.log(horizontalSeparator);
     }
-
-    public printBoard(): void {
-        for (let row of this.grid) {
-            console.log(row.join('|'));
-        }
-        console.log('-'.repeat(this.columns * 2 - 1));
-    }
-
-    public getGrid(): Cell[][] {
-        return this.grid;
-    }
+  }
 }
