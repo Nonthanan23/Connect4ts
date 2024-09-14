@@ -14,7 +14,8 @@ function main(): void {
   if (opponentType.toLowerCase() === 'y') {
       player2 = new ComputerPlayer('Computer', 'O');
     } else {
-      player2 = new HumanPlayer('Player 2', 'O');
+      const player2Name = prompt('Enter Player 2 name: ');
+      player2 = new HumanPlayer(player2Name, 'O');
     }
     const game = new Game([player1, player2]);
     game.start();

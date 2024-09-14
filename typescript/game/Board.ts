@@ -31,6 +31,8 @@ export class Board {
     return this.grid;
   }
   printBoard(): void {
+    console.clear();
+
     const topBorder = '┌───' + '┬───'.repeat(this.columns - 1) + '┐';
     const middleSeparator = '├───' + '┼───'.repeat(this.columns - 1) + '┤';
     const bottomBorder = '└───' + '┴───'.repeat(this.columns - 1) + '┘';
